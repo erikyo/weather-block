@@ -1,0 +1,37 @@
+.wp-block-blocchi-weather-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.weather_item {
+	text-align: center;
+	border-radius: 1rem;
+	border: 3px solid #9a9a9a;
+	width: 7rem;
+	padding: 0.5rem;
+	justify-content: center;
+
+	p {
+		line-height: 1;
+		margin: 0.33rem 0;
+	}
+
+	&__icon {
+		aspect-ratio: 1/1;
+		object-fit: contain;
+		margin: 0 0.8rem;
+		width: 66%;
+	}
+
+	&__date_label {
+		opacity: 66%;
+		font-size: 66%;
+	}
+}
+
+
+
+
+

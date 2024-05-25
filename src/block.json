@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blocchi/weather-block",
+	"version": "0.1.0",
+	"title": "weather block",
+	"category": "widgets",
+	"textdomain": "weather-block",
+	"attributes": {
+		"daysDisplayed": {
+			"type": "number",
+			"default": 1
+		},
+		"lat": {
+			"type": "number"
+		},
+		"lon": {
+			"type": "number"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": true,
+		"dimensions": {
+			"minHeight": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true,
+			"blockGap": true
+		}
+	},
+	"style": "file:./style-view.css",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js"
+}

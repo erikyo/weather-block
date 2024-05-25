@@ -1,0 +1,58 @@
+{
+	"name": "weather-block",
+	"version": "0.1.0",
+	"description": "Weather block",
+	"author": "Erik",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"env": "wp-env start",
+		"start": "wp-scripts start",
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js --fix",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"devDependencies": {
+		"@wordpress/block-editor": "^12.25.0",
+		"@wordpress/blocks": "^12.34.0",
+		"@wordpress/components": "^27.5.0",
+		"@wordpress/element": "^5.34.0",
+		"@wordpress/env": "^9.9.0",
+		"@wordpress/i18n": "^4.57.0",
+		"@wordpress/icons": "^9.49.0",
+		"@wordpress/scripts": "^27.8.0"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^6.55.0",
+		"@wordpress/date": "^4.58.0"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"eslintConfig": {
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/recommended",
+			"plugin:jsdoc/recommended"
+		],
+		"env": {
+			"browser": true,
+			"es6": true,
+			"jquery": true
+		},
+		"parser": "@typescript-eslint/parser",
+		"globals": {
+			"jQuery": true,
+			"$": true
+		}
+	},
+	"stylelint": {
+		"extends": [
+			"@wordpress/stylelint-config",
+			"@wordpress/stylelint-config/scss"
+		]
+	},
+	"prettier": "@wordpress/prettier-config"
+}
