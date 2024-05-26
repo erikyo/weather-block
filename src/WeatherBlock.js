@@ -52,7 +52,7 @@ export function WeatherBlock( { lat, lon, daysDisplayed = 1 } ) {
 		} else {
 			setWeatherLocation( { lat, lon } );
 		}
-	}, [ lat, lon ] );
+	}, [ lat, lon, fetchLocation ] );
 
 	/**
 	 * If the location is set and latitude and longitude are not null, fetch the weather data
@@ -67,7 +67,7 @@ export function WeatherBlock( { lat, lon, daysDisplayed = 1 } ) {
 		const args = new URLSearchParams( {
 			latitude: weatherLocation.lat,
 			longitude: weatherLocation.lon,
-			daily: 'weather_code',
+			daily: 'weather_code,temperature_2m_max,temperature_2m_min',
 			timezone: 'GMT',
 			forecast_days: daysDisplayed,
 		} );
@@ -81,18 +81,24 @@ export function WeatherBlock( { lat, lon, daysDisplayed = 1 } ) {
 				// set the weather data
 				setWeatherData( response );
 			} );
-	}, [ weatherLocation, daysDisplayed ] );
+	}, [ weatherLocation, daysDisplayed, fetchLocation ] );
 
 	return weatherLocation && weatherData ? (
 		<div className="wp-block-blocchi-weather-block">
-			{ weatherData.daily.time.map( ( currentDate, index ) => (
-				<WeatherDay
-					key={ index }
-					weatherCode={ weatherData.daily.weather_code[ index ] }
-					date={ currentDate }
-					icon={ icons[ weatherData.daily.weather_code[ index ] ] }
-				/>
-			) ) }
+			{ weatherData?.daily?.time.map( ( currentDate, index ) => {
+				/** @type {{ weather_code: number[], temperature_2m_max: number[], temperature_2m_min: number[]}} */
+				const dailyData = weatherData.daily;
+				return (
+					<WeatherDay
+						key={ index }
+						weatherCode={ dailyData.weather_code[ index ] }
+						tempMin={ dailyData.temperature_2m_min[ index ] }
+						tempMax={ dailyData.temperature_2m_max[ index ] }
+						date={ currentDate }
+						icon={ icons[ dailyData.weather_code[ index ] ] }
+					/>
+				);
+			} ) }
 		</div>
 	) : (
 		<Loading />
