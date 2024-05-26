@@ -8,6 +8,8 @@ In this repository, we will create a Gutenberg block that showcases weather fore
 
 This README will guide you through the setup and usage of the Weather Forecast block.
 
+![image](https://github.com/erikyo/weather-block/assets/8550908/4b95181c-e907-46cd-8530-f970263829ba)
+
 ## 🧾 Ingredients
 To prepare the Weather Forecast block, you'll need the following ingredients:
 
