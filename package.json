@@ -26,7 +26,6 @@
 		"@wordpress/scripts": "^27.8.0"
 	},
 	"dependencies": {
-		"@wordpress/api-fetch": "^6.55.0",
 		"@wordpress/date": "^4.58.0"
 	},
 	"browserslist": [
@@ -39,14 +38,9 @@
 		],
 		"env": {
 			"browser": true,
-			"es6": true,
-			"jquery": true
+			"es6": true
 		},
-		"parser": "@typescript-eslint/parser",
-		"globals": {
-			"jQuery": true,
-			"$": true
-		}
+		"parser": "@typescript-eslint/parser"
 	},
 	"stylelint": {
 		"extends": [
