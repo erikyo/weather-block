@@ -6,6 +6,7 @@ import { __ } from '@wordpress/i18n';
  * @return {string} the weather interpretation
  *
  * @see https://www.nodc.noaa.gov/archive/arc0021/0002199/1.1/data/0-data/HTML/WMO-CODE/WMO4677.HTM
+ * @example ```
  * 0						Clear sky
  * 1, 2, 3			Mainly clear, partly cloudy, and overcast
  * 45, 48				Fog and depositing rime fog
@@ -20,65 +21,66 @@ import { __ } from '@wordpress/i18n';
  * 95     			Thunderstorm: Slight or moderate (*)
  * 96, 99 			Thunderstorm with slight and heavy hail (*)
  *        			(*) EU only
+ * ```
  */
 export function getWeatherCode( weatherCode ) {
 	switch ( weatherCode ) {
 		case 0:
-			return __( 'Clear sky' );
+			return __( 'Clear sky' ); // Clear sky
 		case 1:
-			return __( 'Mainly clear' );
+			return __( 'Mainly clear' ); // Mainly clear
 		case 2:
-			return __( 'Partly cloudy' );
+			return __( 'Partly cloudy' ); // Partly cloudy
 		case 3:
-			return __( 'Overcast' );
+			return __( 'Overcast' ); // Overcast
 		case 45:
-			return __( 'Fog' );
+			return __( 'Fog' ); // Fog
 		case 48:
-			return __( 'depositing rime fog' );
+			return __( 'Depositing rime fog' ); // depositing rime fog
 		case 51:
-			return __( 'Drizzle' );
+			return __( 'Drizzle' ); // Drizzle
 		case 53:
-			return __( 'Freezing Drizzle' );
+			return __( 'Freezing Drizzle' ); // Freezing Drizzle
 		case 55:
-			return __( 'Dense Drizzle' );
+			return __( 'Dense Drizzle' ); // Dense Drizzle
 		case 56:
-			return __( 'Freezing Drizzle: Light intensity' );
+			return __( 'Light freezing Drizzle' ); // Freezing Drizzle: Light intensity
 		case 57:
-			return __( 'Freezing Drizzle: dense intensity' );
+			return __( 'Dense freezing Drizzle' ); // Freezing Drizzle: dense intensity
 		case 61:
-			return __( 'Rain: Slight' );
+			return __( 'Slight Rain' ); // Rain: Slight
 		case 63:
-			return __( 'Rain: Moderate' );
+			return __( 'Moderate Rain' ); // Rain: Moderate
 		case 65:
-			return __( 'Rain: Heavy intensity' );
+			return __( 'Rain: Heavy intensity' ); // Rain: Heavy intensity
 		case 66:
-			return __( 'Freezing Rain: Light intensity' );
+			return __( 'Light Freezing Rain' ); // Freezing Rain: Light intensity
 		case 67:
-			return __( 'Freezing Rain: Heavy intensity' );
+			return __( 'Heavy Freezing Rain' ); // Freezing Rain: Heavy intensity
 		case 71:
-			return __( 'Snow fall' );
+			return __( 'Snow fall' ); // Snow fall
 		case 73:
-			return __( 'Moderate Snow' );
+			return __( 'Moderate Snow' ); // Moderate Snow
 		case 75:
-			return __( 'Heavy Snow' );
+			return __( 'Heavy Snow' ); // Heavy Snow
 		case 77:
-			return __( 'Snow grains' );
+			return __( 'Snow grains' ); // Snow grains
 		case 80:
-			return __( 'Rain showers' );
+			return __( 'Rain showers' ); // Rain showers
 		case 81:
-			return __( 'Rain showers: Slight' );
+			return __( 'Slight Rain showers' ); // Rain showers: Slight
 		case 82:
-			return __( 'Rain showers: Violent' );
+			return __( 'Violent Rain showers' ); // Rain showers: Violent
 		case 85:
-			return __( 'Light snow showers' );
+			return __( 'Light snow showers' ); // Light snow showers
 		case 86:
-			return __( 'Heavy Snow showers' );
+			return __( 'Heavy Snow showers' ); // Heavy Snow showers
 		case 95:
-			return __( 'Slight or moderate thunderstorm' );
+			return __( 'Slight thunderstorm' ); // Slight or moderate thunderstorm
 		case 96:
-			return __( 'Thunderstorm with slight hail' );
+			return __( 'Thunderstorm with slight hail' ); // Thunderstorm with slight hail
 		case 99:
-			return __( 'Thunderstorm with heavy hail' );
+			return __( 'Thunderstorm with heavy hail' ); // Thunderstorm with heavy hail
 		default:
 			return __( 'Unknown weather code: ' ) + weatherCode;
 	}
