@@ -6,32 +6,44 @@
 }
 
 .weather_item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	text-align: center;
-	border-radius: 1rem;
-	border: 3px solid #9a9a9a;
-	width: 7rem;
+	border-radius: 1.2rem;
+	background-color: #fff;
+	border: 1px solid #eee;
+	width: 125px;
 	padding: 0.5rem;
-	justify-content: center;
 
 	p {
-		line-height: 1;
-		margin: 0.33rem 0;
-	}
-
-	&__icon {
-		aspect-ratio: 1/1;
-		object-fit: contain;
-		margin: 0 0.8rem;
-		width: 66%;
+		line-height: 1.2;
+		margin: 0.1rem 0.3rem;
 	}
 
 	&__date_label {
 		opacity: 66%;
 		font-size: 66%;
 	}
+
+	&__title {
+		font-size: 80%;
+		font-weight: 600;
+	}
+
+	&__icon {
+		aspect-ratio: 1 / 1;
+		object-fit: contain;
+		margin: 0 0.6rem 0.4rem;
+		width: 50%;
+	}
+
+	&__temp {
+		display: flex;
+		gap: 0.3rem;
+		font-size: 66%;
+		opacity: 80%;
+		font-weight: 600;
+	}
 }
-
-
-
-
-
