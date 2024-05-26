@@ -8,12 +8,13 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {JSX.Element} The save element
  */
 export default function save( { attributes } ) {
+	const { daysDisplayed, lat, lon } = attributes;
 	return (
 		<div
 			{ ...useBlockProps.save() }
-			data-days-displayed={ attributes.daysDisplayed }
-			data-lat={ attributes.lat }
-			data-lon={ attributes.lon }
+			data-days-displayed={ daysDisplayed }
+			data-lat={ lat }
+			data-lon={ lon }
 		/>
 	);
 }

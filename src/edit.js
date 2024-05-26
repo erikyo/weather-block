@@ -17,7 +17,7 @@ import {
 	ToolbarDropdownMenu,
 } from '@wordpress/components';
 
-import { __ } from '@wordpress/i18n';
+import { __, _n, sprintf } from '@wordpress/i18n';
 import { WeatherBlock } from './WeatherBlock';
 import { calendar, mapMarker } from '@wordpress/icons';
 import { useState } from '@wordpress/element';
@@ -37,34 +37,24 @@ export default function Edit( { attributes, setAttributes } ) {
 		lat && lon ? 'custom' : 'auto'
 	);
 
-	const displayedEventsOptions = [
-		{
-			title: '1 day',
-			onClick: () => setAttributes( { daysDisplayed: 1 } ),
-		},
-		{
-			title: '3 days',
-			onClick: () => setAttributes( { daysDisplayed: 3 } ),
-		},
-		{
-			title: '7 days',
-			onClick: () => setAttributes( { daysDisplayed: 7 } ),
-		},
-		{
-			title: '14 days',
-			onClick: () => setAttributes( { daysDisplayed: 14 } ),
-		},
-	];
-
-	const blockProps = useBlockProps();
+	const displayedEventsOptions = [ 1, 3, 7, 14 ].map( ( days ) => {
+		return {
+			title: sprintf(
+				/** translators: %s is the number of days */
+				_n( '%s day', '%s days', days, 'weather-block' ),
+				days
+			),
+			onClick: () => setAttributes( { daysDisplayed: days } ),
+		};
+	} );
 
 	return (
-		<div { ...blockProps }>
+		<div { ...useBlockProps() }>
 			<BlockControls>
 				<Toolbar label="Options">
 					<ToolbarDropdownMenu
 						icon={ calendar }
-						label="Select a direction"
+						label={ __( 'Select a direction' ) }
 						controls={ displayedEventsOptions }
 						onChange={ ( newDays ) =>
 							setAttributes( { daysDisplayed: newDays } )
@@ -96,8 +86,8 @@ export default function Edit( { attributes, setAttributes } ) {
 							setLocationMode( newMode );
 							if ( newMode === 'auto' ) {
 								setAttributes( {
-									lat: false,
-									lon: false,
+									lat: null,
+									lon: null,
 								} );
 							}
 						} }
@@ -107,26 +97,24 @@ export default function Edit( { attributes, setAttributes } ) {
 							<TextControl
 								type={ 'number' }
 								label={ __( 'Latitude', 'weather-block' ) }
-								value={ lat ?? 0.0 }
+								value={ lat ?? '' }
 								min={ -90 }
 								max={ 90 }
 								onChange={ ( newLat ) =>
 									setAttributes( {
-										...attributes,
-										lat: newLat,
+										lat: Number( newLat ),
 									} )
 								}
 							/>
 							<TextControl
 								type={ 'number' }
 								label={ __( 'Longitude', 'weather-block' ) }
-								value={ lon ?? 0.0 }
+								value={ lon ?? '' }
 								min={ -180 }
 								max={ 180 }
 								onChange={ ( newLon ) =>
 									setAttributes( {
-										...attributes,
-										lon: newLon,
+										lon: Number( newLon ),
 									} )
 								}
 							/>
