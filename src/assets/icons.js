@@ -4,8 +4,6 @@ import weatherIcon3 from './weatherIcon-3.svg';
 import weatherIcon45 from './weatherIcon-45.svg';
 import weatherIcon56 from './weatherIcon-56.svg';
 import weatherIcon61 from './weatherIcon-61.svg';
-import weatherIcon63 from './weatherIcon-63.svg';
-import weatherIcon65 from './weatherIcon-65.svg';
 import weatherIcon71 from './weatherIcon-71.svg';
 import weatherIcon99 from './weatherIcon-99.svg';
 
@@ -22,8 +20,8 @@ export const icons = {
 	56: weatherIcon56, // Freezing Drizzle: Light intensity
 	57: weatherIcon56, // Freezing Drizzle: dense intensity
 	61: weatherIcon61, // Rain: Slight
-	63: weatherIcon63, // Rain: Moderate
-	65: weatherIcon65, // Rain: Heavy intensity
+	63: weatherIcon61, // Rain: Moderate
+	65: weatherIcon61, // Rain: Heavy intensity
 	66: weatherIcon56, // Freezing Rain: Light intensity
 	67: weatherIcon56, // Freezing Rain: Heavy intensity
 	71: weatherIcon71, // Snow fall
@@ -31,8 +29,8 @@ export const icons = {
 	75: weatherIcon71, // Heavy Snow
 	77: weatherIcon71, // Snow grains
 	80: weatherIcon61, // Rain showers
-	81: weatherIcon63, // Rain showers: Slight
-	82: weatherIcon65, // Rain showers: Violent
+	81: weatherIcon61, // Rain showers: Slight
+	82: weatherIcon61, // Rain showers: Violent
 	85: weatherIcon71, // Light snow showers
 	86: weatherIcon56, // Heavy Snow showers
 	95: weatherIcon99, // Slight or moderate thunderstorm
