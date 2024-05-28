@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_qrcode_block() {
+function create_weather_block() {
 	\register_block_type( __DIR__ . '/build' );
 }
-\add_action( 'init', 'create_qrcode_block' );
+\add_action( 'init', 'create_weather_block' );
